@@ -14,10 +14,18 @@ body {
     flex-wrap: wrap;
     margin: auto;  
 }
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
 
 button {
-    margin: 2em;
+    margin-top: 3em;
+    margin-left: 2em;
+    margin-right: 2em;
     align-self: center;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 div {

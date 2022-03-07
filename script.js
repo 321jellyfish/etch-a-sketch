@@ -1,7 +1,7 @@
 const divContainer = document.querySelector("#container");
 const clearGridButton = document.querySelector("#clear-grid");
 const newSizeGridButton = document.querySelector("#new-size-grid")
-
+let listOfDivs;
 
 function createGrid(userSizeChoice){
         for(let i = 0; i < userSizeChoice * userSizeChoice; i++ ){
@@ -9,7 +9,10 @@ function createGrid(userSizeChoice){
                 div.style.width = `${400/userSizeChoice}px`;
                 div.style.height = `${400/userSizeChoice}px`;
                 divContainer.appendChild(div);
-                div.addEventListener("mouseover", () => div.classList.add("coloredDiv") );  
+                //div.addEventListener("mouseover", () => div.classList.add("coloredDiv") );  
+                div.addEventListener("mouseover", () => div.classList.add("coloredDiv"), div.style.opacity = 10);
+                listOfDivs = document.querySelectorAll("#container > *");
+                
         }
 }
 
@@ -36,11 +39,12 @@ window.addEventListener('load', createGrid(16));
 
 //clearGridButton.addEventListener("click", () =>  => div.classList.remove("coloredDiv")) );
 
-clearGridButton.addEventListener("click", () => allTheDivs.forEach((div) => div.classList.remove("coloredDiv")) );
+clearGridButton.addEventListener("click", () => listOfDivs.forEach((div) => div.classList.remove("coloredDiv")) );
 
 newSizeGridButton.addEventListener("click", createCustomGrid);
 
-let allTheDivs = document.querySelectorAll("#container > *");
+//let allTheDivs = document.querySelectorAll("#container > *");
+
 
 //Update clear button so it can clear after a new grid size has been chosen
 

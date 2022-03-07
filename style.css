@@ -39,5 +39,5 @@ div {
 
 .coloredDiv {
     /*background-color: teal;*/
-    background-color: hsla(120, 60%, 70%, 0.3);
+    background-color: hsla(120, 60%, 70%);
 }

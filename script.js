@@ -2,13 +2,18 @@ const divContainer = document.querySelector("#container");
 const clearGrid = document.querySelector("#clear-grid");
 const newSizeGrid = document.querySelector("#new-size-grid")
 
-//Create the squares of the etch-a-sketch-canvas
-for(let i = 0; i < 256; i++ ){
-        const div = document.createElement('div');
-        div.classList.add("aliveDiv");
-        divContainer.appendChild(div);
-        div.addEventListener("mouseover", () => div.classList.add("coloredDiv") );
+
+function createGrid(userSizeChoice){
+        for(let i = 0; i < userSizeChoice * userSizeChoice; i++ ){
+                const div = document.createElement('div');
+                div.style.width = `${400/userSizeChoice}px`;
+                div.style.height = `${400/userSizeChoice}px`;
+                divContainer.appendChild(div);
+                div.addEventListener("mouseover", () => div.classList.add("coloredDiv") );  
+        }
 }
+
+window.addEventListener('load', createGrid(16));
 
 let allTheDivs = document.querySelectorAll("#container > *");
 
@@ -33,7 +38,8 @@ function emptyGrid(){
         }
 }
 
+
 //Limit the number of squares the users can ask for per side
 //Update clear button so it can clear after a new grid size has been chosen
 //Style buttons more nicely
-//Refactor code so that it is more functional 
+//Refactor code so that it is more functional

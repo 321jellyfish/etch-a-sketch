@@ -21,7 +21,7 @@ function createCustomGrid(){
                 if(userSizeChoice === null){
                         return;
                 }
-                if((userSizeChoice > 100)||(typeof userSizeChoice != "number")){
+                if((userSizeChoice > 100)||(typeof +userSizeChoice !== "number")){
                         userSizeChoice = prompt("Please input a number between 1 and 100");
                 }
                 if(userSizeChoice > 100){
@@ -34,14 +34,13 @@ function createCustomGrid(){
 
 window.addEventListener('load', createGrid(16));
 
-let allTheDivs = document.querySelectorAll("#container > *");
+//clearGridButton.addEventListener("click", () =>  => div.classList.remove("coloredDiv")) );
 
 clearGridButton.addEventListener("click", () => allTheDivs.forEach((div) => div.classList.remove("coloredDiv")) );
 
 newSizeGridButton.addEventListener("click", createCustomGrid);
 
+let allTheDivs = document.querySelectorAll("#container > *");
 
-//Limit the number of squares the users can ask for per side
 //Update clear button so it can clear after a new grid size has been chosen
-//Style buttons more nicely
-//Refactor code so that it is more functional
+

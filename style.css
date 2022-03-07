@@ -29,10 +29,6 @@ div {
     margin: 0px;
 }
 
-.blankDiv{
-    background-color: pink;
-}
-
-.myDiv {
-    background-color: darkblue;
+.coloredDiv {
+    background-color: teal;
 }

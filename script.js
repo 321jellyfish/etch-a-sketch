@@ -18,6 +18,16 @@ function createCustomGrid(){
                 divContainer.removeChild(divContainer.firstChild);
         }
         let userSizeChoice = prompt("How many squares would you like per side of grid? Input a number up to 100");
+                if(userSizeChoice === null){
+                        return;
+                }
+                if((userSizeChoice > 100)||(typeof userSizeChoice != "number")){
+                        userSizeChoice = prompt("Please input a number between 1 and 100");
+                }
+                if(userSizeChoice > 100){
+                        userSizeChoice = 100;
+                        console.log({userSizeChoice});
+                }
 
         createGrid(userSizeChoice);
 }
